@@ -10,7 +10,19 @@ public AudioClip musicClipTwo;
 
 public AudioSource musicSource;
 
+Animator anim;
+
+
 // Update is called once per frame
+
+
+void Start()
+
+{
+
+  anim = GetComponent<Animator>();
+
+}
 void Update()
 {
      if (Input.GetKeyDown(KeyCode.W))
@@ -18,11 +30,15 @@ void Update()
           musicSource.clip = musicClipOne;
           musicSource.Play();
 
+           anim.SetInteger("State", 1);
+
          }
 
      if (Input.GetKeyUp(KeyCode.W))
         {
           musicSource.Stop();
+
+           anim.SetInteger("State", 0);
 
          }
 
@@ -30,11 +46,14 @@ void Update()
         {
           musicSource.clip = musicClipTwo;
           musicSource.Play();
+
+           anim.SetInteger("State", 2);
          }
 
      if (Input.GetKeyUp(KeyCode.R))
         {
           musicSource.Stop();
+           anim.SetInteger("State", 0);
 
          }
 
