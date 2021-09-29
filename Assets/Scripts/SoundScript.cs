@@ -47,5 +47,32 @@ void Update()
         {
           musicSource.loop = false;
         }
+
+      if (Input.GetKeyDown(KeyCode.V))
+
+      {
+        musicSource.volume = 0.5f;
+      }
+
+      if (Input.GetKeyUp(KeyCode.V))
+
+      {
+        musicSource.volume = 1.0f;
+
+      }
+
+      if (Input.GetKeyDown(KeyCode.P))
+
+      {
+        musicSource.pitch = 3.0f;
+      }
+
+      if (Input.GetKeyUp(KeyCode.P))
+
+      {
+        musicSource.pitch = 1.0f;
+      }
+
+
    }
 }
